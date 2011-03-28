@@ -10,14 +10,15 @@ package ru.utorus.am.general;
 public class Word {
     private String word;
 
-    public Word(String str){
+    public Word(String str) {
         setWord(str);
     }
-    public String getWord(){
+
+    public String getWord() {
         return this.word;
     }
 
-    public void setWord(String word){
+    public void setWord(String word) {
         this.word = word;
     }
 
