@@ -15,18 +15,44 @@ import ru.utorus.am.general.Word;
  */
 public class PerformerKOM implements Performer {
     private TypeS type;
-    private State state;
+    private State state = State.initialization;
+    private Master master;
+    private Dispatcher dispatcher;
+    private TargetSubsystem targetSubsystem;
 
-    public PerformerKOM() {
-        state = State.initialization;
+    public PerformerKOM(Master mMaster, Dispatcher mDispatcher) {
+        master = mMaster;
+        dispatcher = mDispatcher;
+        type = typeDetect();
+        targetSubsystem = new TargetSubsystem();
+    }
+
+    private TypeS typeDetect() {
+        return TypeS.KIS;
     }
 
     public void deConfigure() {
+        targetSubsystem.deConfigure();
     }
 
     public void configure(Word config) {
+        //targetSubsystem.configure();
     }
 
     public void execute(Word targetMessage) {
+        targetSubsystem.execute(targetMessage);
     }
+
+    public class TargetSubsystem implements Performer {
+
+        public void deConfigure() {
+        }
+
+        public void configure(Word config) {
+        }
+
+        public void execute(Word targetMessage) {
+        }
+    }
+
 }
