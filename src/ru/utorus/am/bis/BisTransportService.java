@@ -15,17 +15,17 @@ import ru.utorus.am.general.Word;
         private String serviceMessage = "2026";
         private String configure = "1";
         private String deConfigure = "2";
-    private Performer performer;
+    private PerformerKOM performerKOM;
     private Master master;
 
-    BisTransportService(BDriver driver, Master master, Performer performer) {
+    BisTransportService(BDriver driver, Master master, PerformerKOM performerKOM) {
             this.driver = driver;
             this.master = master;
-            this.performer = performer;
+            this.performerKOM = performerKOM;
         }
 
         public void update() {
-            if (driver != null && master != null && performer != null) {
+            if (driver != null && master != null && performerKOM != null) {
                 Word wrd = driver.get();
                 String str = wrd.getWord();
                 String guid = str.substring(4);
