@@ -17,8 +17,8 @@ public class PerformerKOM implements Performer {
     private TypeS type;
     private State state;
 
-    public PerformerKOM(TypeS type) {
-        this.type = type;
+    public PerformerKOM() {
+        state = State.initialization;
     }
 
     public void deConfigure() {
