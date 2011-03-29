@@ -8,11 +8,23 @@ package ru.utorus.am.general;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Pulser {
-    class HeartBeat extends TimerUser{
+    private HeartBeat heartBeat;
+
+    public Pulser() {
+        heartBeat = new HeartBeat();
+    }
+
+    protected class HeartBeat extends TimerUser {
 
         @Override
         protected void execute() {
             //To change body of implemented methods use File | Settings | File Templates.
         }
     }
+
+    public void execute(Word wrd) {
+        heartBeat.execute();
+    }
+
+    protected abstract void send(Word wrd);
 }
