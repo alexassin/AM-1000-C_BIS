@@ -1,5 +1,7 @@
 package ru.utorus.am.general;
 
+import ru.utorus.am.bis.Dispatcher;
+
 /**
  * Created by IntelliJ IDEA.
  * User: desktop
@@ -16,14 +18,21 @@ public abstract class Pulser {
 
     protected class HeartBeat extends TimerUser {
 
+        private Word character;
+
         @Override
         protected void execute() {
-            //To change body of implemented methods use File | Settings | File Templates.
+            send(character);
+        }
+
+        public void process(Word wrd) {
+            this.character = wrd;
+
         }
     }
 
     public void execute(Word wrd) {
-        heartBeat.execute();
+        heartBeat.process(wrd);
     }
 
     protected abstract void send(Word wrd);

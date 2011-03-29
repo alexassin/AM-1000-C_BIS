@@ -1,5 +1,7 @@
 package ru.utorus.am.bis;
 
+import ru.utorus.am.general.Word;
+
 /**
  * Created by IntelliJ IDEA.
  * User: desktop
@@ -9,4 +11,6 @@ package ru.utorus.am.bis;
  */
 public class Dispatcher {
 
+    public void sendServiceSignal(Word character) {
+    }
 }
