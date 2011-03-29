@@ -14,7 +14,7 @@ public abstract class Pulser {
         heartBeat = new HeartBeat();
     }
 
-    class HeartBeat extends TimerUser {
+    protected class HeartBeat extends TimerUser {
 
         @Override
         protected void execute() {
@@ -22,7 +22,9 @@ public abstract class Pulser {
         }
     }
 
-    public void send(Word wrd) {
-
+    public void execute(Word wrd) {
+        heartBeat.execute();
     }
+
+    protected abstract void send(Word wrd);
 }
