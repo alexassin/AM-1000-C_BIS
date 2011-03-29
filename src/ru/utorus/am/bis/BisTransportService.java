@@ -10,7 +10,7 @@ import ru.utorus.am.general.Word;
  * Time: 14:27
  * To change this template use File | Settings | File Templates.
  */
-class BisTransportService implements Observer {
+public class BisTransportService implements Observer {
     private BDriver driver;
     private String serviceMessage = "2026";
     private String configure = "1";
