@@ -1,5 +1,6 @@
 package ru.utorus.am.bis;
 
+import ru.utorus.am.general.Driver;
 import ru.utorus.am.general.Subscriber;
 import ru.utorus.am.general.Word;
 
@@ -10,7 +11,7 @@ import ru.utorus.am.general.Word;
  * Time: 14:24
  * To change this template use File | Settings | File Templates.
  */
-public class BDriver extends Subscriber implements Runnable {
+public class BDriver extends Subscriber implements Runnable, Driver {
     private String number;
     private Word word;
 
