@@ -30,9 +30,7 @@ public class BisTransportService implements Observer {
             String str = wrd.getWord();
             String guid = str.substring(4);
             if (guid.equals(serviceMessage)) {
-
-                master.execute(str.substring(5, str.length()));
-
+                master.execute(new Word(str.substring(5, str.length())));
             }
         }
     }
