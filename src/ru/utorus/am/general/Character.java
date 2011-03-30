@@ -10,8 +10,8 @@ package ru.utorus.am.general;
 public class Character {
     private String character;
 
-    public Character(String character) {
-        this.character = character;
+    public Character(State state) {
+        this.character = state.name();
     }
 
     public String getCharacter() {

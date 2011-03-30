@@ -27,7 +27,6 @@ public abstract class Pulser {
 
         public void process(Word wrd) {
             this.character = wrd;
-
         }
     }
 
