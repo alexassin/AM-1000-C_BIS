@@ -10,7 +10,7 @@ import ru.utorus.am.bis.Dispatcher;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Pulser {
-    private HeartBeat heartBeat;
+    protected HeartBeat heartBeat;
 
     public Pulser() {
         heartBeat = new HeartBeat();
@@ -25,14 +25,11 @@ public abstract class Pulser {
             send(character);
         }
 
-        public void process(Word wrd) {
+        public void process(final Word wrd) {
             this.character = wrd;
         }
     }
 
-    public void execute(Word wrd) {
-        heartBeat.process(wrd);
-    }
 
-    protected abstract void send(Word wrd);
+    protected abstract void send(final Word wrd);
 }
