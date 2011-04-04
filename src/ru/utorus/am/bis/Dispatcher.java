@@ -20,7 +20,11 @@ public class Dispatcher {
     }
 
     public void sendServiceSignal(final Word serviceSignal) {
-        StringBuffer signal = new StringBuffer().append(nodeId).append(serviceSignal.getWord());
+        StringBuffer service = new StringBuffer(serviceSignal.getWord());
+        StringBuffer signal = new StringBuffer(service.substring(4))
+                .append(nodeId)
+                .append(service
+                        .substring(4, service.length()));
         serviceSignal.setWord(signal.toString());
         driver.send(serviceSignal);
     }
