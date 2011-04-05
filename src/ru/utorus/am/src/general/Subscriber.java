@@ -1,6 +1,6 @@
 package ru.utorus.am.src.general;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +11,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class Subscriber {
-    List<Observer> listOfSubscriber = new LinkedList<Observer>();
+    List<Observer> listOfSubscriber = new ArrayList<Observer>();
 
     public void attach(Observer observer) {
         listOfSubscriber.add(observer);
