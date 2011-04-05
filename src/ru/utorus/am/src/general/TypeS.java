@@ -1,6 +1,4 @@
-package ru.utorus.am.general;
-
-import sun.org.mozilla.javascript.internal.Kit;
+package ru.utorus.am.src.general;
 
 /**
  * Created by IntelliJ IDEA.

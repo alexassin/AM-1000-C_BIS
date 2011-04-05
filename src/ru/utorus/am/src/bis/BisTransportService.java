@@ -1,7 +1,7 @@
-package ru.utorus.am.bis;
+package ru.utorus.am.src.bis;
 
-import ru.utorus.am.general.Observer;
-import ru.utorus.am.general.Word;
+import ru.utorus.am.src.general.Observer;
+import ru.utorus.am.src.general.Word;
 
 /**
  * Created by IntelliJ IDEA.

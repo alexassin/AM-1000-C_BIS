@@ -1,6 +1,5 @@
-package ru.utorus.am.general;
+package ru.utorus.am.src.general;
 
-import java.util.Timer;
 import java.util.TimerTask;
 
 /**
@@ -11,7 +10,7 @@ import java.util.TimerTask;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class TimerUser {
-    private class Timer extends Thread {
+    protected class Timer extends Thread {
         int interval;
         private java.util.Timer timer;
         private TimerTask heartbeatTask;
@@ -27,9 +26,11 @@ public abstract class TimerUser {
                 @Override
                 public void run() {
                     execute();
+                    System.out.println("test");
                 }
             };
-            timer.schedule(heartbeatTask, interval);
+            timer.schedule(heartbeatTask, interval, interval);
+
         }
 
         public void stopTimer() {

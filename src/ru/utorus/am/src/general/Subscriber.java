@@ -1,4 +1,4 @@
-package ru.utorus.am.general;
+package ru.utorus.am.src.general;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,8 +1,8 @@
-package ru.utorus.am.bis;
+package ru.utorus.am.src.bis;
 
-import ru.utorus.am.general.Performer;
-import ru.utorus.am.general.Pulser;
-import ru.utorus.am.general.Word;
+import ru.utorus.am.src.general.Performer;
+import ru.utorus.am.src.general.Pulser;
+import ru.utorus.am.src.general.Word;
 
 /**
  * Created by IntelliJ IDEA.

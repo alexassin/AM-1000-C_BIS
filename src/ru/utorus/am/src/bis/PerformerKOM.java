@@ -1,10 +1,10 @@
-package ru.utorus.am.bis;
+package ru.utorus.am.src.bis;
 
 
-import ru.utorus.am.general.Performer;
-import ru.utorus.am.general.State;
-import ru.utorus.am.general.TypeS;
-import ru.utorus.am.general.Word;
+import ru.utorus.am.src.general.Performer;
+import ru.utorus.am.src.general.State;
+import ru.utorus.am.src.general.TypeS;
+import ru.utorus.am.src.general.Word;
 
 /**
  * Created by IntelliJ IDEA.
