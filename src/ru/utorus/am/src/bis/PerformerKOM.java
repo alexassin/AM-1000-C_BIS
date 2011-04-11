@@ -1,10 +1,7 @@
 package ru.utorus.am.src.bis;
 
 
-import ru.utorus.am.src.general.Performer;
-import ru.utorus.am.src.general.State;
-import ru.utorus.am.src.general.TypeS;
-import ru.utorus.am.src.general.Word;
+import ru.utorus.am.src.general.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,10 +14,10 @@ public class PerformerKOM implements Performer {
     private TypeS type;
     private State state = State.initialization;
     private Master master;
-    private Dispatcher dispatcher;
+    private DispatcherKOM dispatcher;
     private TargetSubsystem targetSubsystem;
 
-    public PerformerKOM(Master mMaster, Dispatcher mDispatcher) {
+    public PerformerKOM(Master mMaster, DispatcherKOM mDispatcher) {
         master = mMaster;
         dispatcher = mDispatcher;
         type = typeDetect();
@@ -35,11 +32,11 @@ public class PerformerKOM implements Performer {
         targetSubsystem.deConfigure();
     }
 
-    public void configure(Word config) {
+    public void configure(ConfigurationData config) {
         //targetSubsystem.configure();
     }
 
-    public void execute(Word targetMessage) {
+    public void execute(TargetMessage targetMessage) {
         targetSubsystem.execute(targetMessage);
     }
 
@@ -48,10 +45,10 @@ public class PerformerKOM implements Performer {
         public void deConfigure() {
         }
 
-        public void configure(Word config) {
+        public void configure(ConfigurationData config) {
         }
 
-        public void execute(Word targetMessage) {
+        public void execute(TargetMessage targetMessage) {
         }
     }
 

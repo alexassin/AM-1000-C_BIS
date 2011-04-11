@@ -1,8 +1,7 @@
 package ru.utorus.am.src.bis;
 
-import ru.utorus.am.src.general.Performer;
-import ru.utorus.am.src.general.Pulser;
-import ru.utorus.am.src.general.Word;
+import ru.utorus.am.src.general.*;
+import ru.utorus.am.src.general.Character;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,14 +10,13 @@ import ru.utorus.am.src.general.Word;
  * Time: 14:28
  * To change this template use File | Settings | File Templates.
  */
-public class Master extends Pulser {
+public class MasterKOM extends Pulser implements ru.utorus.am.src.general.Master {
 
-    private final Dispatcher dispatcher;
+    private final DispatcherKOM dispatcher;
     private final Performer performer;
-    private static final String CONFIGURE_COMMAND = "1";
-    private static final String DECONFIGURE_COMMAND = "2";
 
-    public Master(final Dispatcher dispatcher, final Performer performer) {
+
+    public MasterKOM(final DispatcherKOM dispatcher, final Performer performer) {
         this.dispatcher = dispatcher;
         this.performer = performer;
     }
@@ -26,10 +24,15 @@ public class Master extends Pulser {
     public void execute(final Word command) {
         String commandStr = command.getWord();
         if (commandStr.substring(1).equals(CONFIGURE_COMMAND)) {
-            performer.configure(new Word(commandStr.substring(1, commandStr.length())));
+            performer.configure(new ConfigurationData(commandStr.substring(1, commandStr.length())));
         } else if (commandStr.substring(1).equals(DECONFIGURE_COMMAND)) {
             performer.deConfigure();
         }
+    }
+
+
+    public void update(Character character) {
+        heartBeat.process(new Word(character.getCharacter()));
     }
 
     @Override
