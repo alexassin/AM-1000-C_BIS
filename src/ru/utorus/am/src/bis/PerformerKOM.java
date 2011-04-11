@@ -33,7 +33,7 @@ public class PerformerKOM implements Performer {
     }
 
     public void configure(ConfigurationData config) {
-        //targetSubsystem.configure();
+        targetSubsystem.configure(config);
     }
 
     public void execute(TargetMessage targetMessage) {
