@@ -18,13 +18,14 @@ public class PerformerKOM implements Performer {
     private State state = State.initialization;
     private Master master;
     private Dispatcher dispatcher;
-    private TargetSubsystem targetSubsystem;
+    private TargetSubsystem targetSubsystem = new TargetSubsystem();
+    private SubNetwork subNetwork;
+    private ControllerConfiguration controllerConfiguration = new ControllerConfiguration();
 
     public PerformerKOM(Master mMaster, Dispatcher mDispatcher) {
         master = mMaster;
         dispatcher = mDispatcher;
         type = typeDetect();
-        targetSubsystem = new TargetSubsystem();
     }
 
     private TypeS typeDetect() {
@@ -55,4 +56,18 @@ public class PerformerKOM implements Performer {
         }
     }
 
+    public static class SubNetwork implements Performer {
+
+        public void deConfigure() {
+        }
+
+        public void configure(Word config) {
+        }
+
+        public void execute(Word targetMessage) {
+        }
+    }
+
+    public static class ControllerConfiguration {
+    }
 }
