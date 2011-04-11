@@ -1,4 +1,4 @@
-package ru.utorus.am.general;
+package ru.utorus.am.src.general;
 
 /**
  * Created by IntelliJ IDEA.

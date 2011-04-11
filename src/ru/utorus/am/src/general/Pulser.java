@@ -1,6 +1,4 @@
-package ru.utorus.am.general;
-
-import ru.utorus.am.bis.Dispatcher;
+package ru.utorus.am.src.general;
 
 /**
  * Created by IntelliJ IDEA.

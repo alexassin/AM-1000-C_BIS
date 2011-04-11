@@ -1,7 +1,7 @@
-package ru.utorus.am.bis;
+package ru.utorus.am.src.bis;
 
-import ru.utorus.am.general.Driver;
-import ru.utorus.am.general.Word;
+import ru.utorus.am.src.general.Driver;
+import ru.utorus.am.src.general.Word;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,7 +20,11 @@ public class Dispatcher {
     }
 
     public void sendServiceSignal(final Word serviceSignal) {
-        StringBuffer signal = new StringBuffer().append(nodeId).append(serviceSignal.getWord());
+        StringBuffer service = new StringBuffer(serviceSignal.getWord());
+        StringBuffer signal = new StringBuffer(service.substring(4))
+                .append(nodeId)
+                .append(service
+                        .substring(4, service.length()));
         serviceSignal.setWord(signal.toString());
         driver.send(serviceSignal);
     }
