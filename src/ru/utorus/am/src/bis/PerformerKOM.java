@@ -3,13 +3,7 @@ package ru.utorus.am.src.bis;
 
 import ru.utorus.am.src.general.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: desktop
- * Date: 28.03.11
- * Time: 14:28
- * To change this template use File | Settings | File Templates.
- */
+
 public class PerformerKOM implements Performer {
     private TypeS type;
     private State state = State.initialization;

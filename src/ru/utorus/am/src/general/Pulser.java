@@ -1,12 +1,6 @@
 package ru.utorus.am.src.general;
 
-/**
- * Created by IntelliJ IDEA.
- * User: desktop
- * Date: 29.03.11
- * Time: 8:44
- * To change this template use File | Settings | File Templates.
- */
+
 public abstract class Pulser {
     protected HeartBeat heartBeat;
 

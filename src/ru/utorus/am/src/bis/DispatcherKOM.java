@@ -3,13 +3,7 @@ package ru.utorus.am.src.bis;
 import ru.utorus.am.src.general.Driver;
 import ru.utorus.am.src.general.Word;
 
-/**
- * Created by IntelliJ IDEA.
- * User: desktop
- * Date: 29.03.11
- * Time: 8:41
- * To change this template use File | Settings | File Templates.
- */
+
 public class DispatcherKOM implements ru.utorus.am.src.general.Dispatcher {
     private final Driver driver;
     private int nodeId;
