@@ -2,65 +2,61 @@ package ru.utorus.am.src.as;
 
 import ru.utorus.am.src.general.*;
 
-public class DispatcherAS implements Dispatcher{
-	private Master master;
+public class DispatcherAS implements Dispatcher {
+    private Master master;
+    private Integer nodeNumber;
+    private BDriver bdriver;
+    private Performer as;
+    private TransportService transportService;
 
-	private Integer nodeNumber;
+    public DispatcherAS(int nodeNumber) {
+        this.nodeNumber = nodeNumber;
+        transportService = new TransportService();
+        bdriver = new BDriver();
+    }
 
-	private BDriver bdriver;
+    public void setMaster(Master master) {
+        this.master = master;
+    }
 
-	private Performer as;
+    public void setAS(Performer as) {
+        this.as = as;
+    }
 
-	private TransportService transportService;
+    public void sendServiceSignal(Word wrd) {
+        String signal = wrd.getWord() + " " + nodeNumber;
+        wrd.setWord(signal);
+        bdriver.send(wrd);
+    }
 
-	public DispatcherAS(int nodeNumber) {
-		this.nodeNumber = nodeNumber;
-		transportService = new TransportService();
-		bdriver = new BDriver();
-	}
+    public void sendTargetSignal(Word targetMessage) {
+        bdriver.send(targetMessage);
+    }
 
-	public void setMaster(Master master) {
-		this.master = master;
-	}
+    class TransportService {
+        public void processSS(Word wrd) {
+            String signal = wrd.getWord();
+            if (signal.contains(String.valueOf(nodeNumber))) {
+                master.execute(wrd);
+            }
+        }
+    }
 
-	public void setAS(Performer as) {
-		this.as = as;
-	}
+    class BDriver {
+        private String signal;
 
-	public void sendServiceSignal(Word wrd) {
-		String signal = wrd.getWord() + " " + nodeNumber;
-		wrd.setWord(signal);
-		bdriver.send(wrd);
-	}
+        public void send(Word wrd) {
+            this.signal = wrd.getWord();
+            System.out.println(signal);
+        }
 
-	public void sendTargetSignal(Word targetMessage) {
-		bdriver.send(targetMessage);
-	}
-
-	class TransportService {
-		public void processSS(Word wrd) {
-			String signal = wrd.getWord();
-			if (signal.contains(String.valueOf(nodeNumber))) {
-				master.execute(wrd);
-			}
-		}
-	}
-
-	class BDriver {
-		private String signal;
-
-		public void send(Word wrd) {
-			this.signal = wrd.getWord();
-			System.out.println(signal);
-		}
-
-		public void accept(String str) {
-			Word wrd = new Word(str);
-			if (str.startsWith("2026")) {
-				as.execute(new TargetMessage(str));
-			} else {
-				transportService.processSS(wrd);
-			}
-		}
-	}
+        public void accept(String str) {
+            Word wrd = new Word(str);
+            if (str.startsWith("2026")) {
+                as.execute(new TargetMessage(str));
+            } else {
+                transportService.processSS(wrd);
+            }
+        }
+    }
 }

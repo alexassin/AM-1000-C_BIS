@@ -8,6 +8,10 @@ public class Word {
         setWord(str);
     }
 
+    public Word() {
+
+    }
+
     public String getWord() {
         return this.word;
     }
