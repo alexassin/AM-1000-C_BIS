@@ -71,7 +71,6 @@ public class DriverEmulator implements Runnable, Driver {
 
                 Word wrd = new Word();
                 for (String intstr : message) {
-                    //   System.out.println(intstr);
                     try {
                         wrd.write(Integer.parseInt(intstr));
                     } catch (Exception E) {
@@ -91,9 +90,7 @@ public class DriverEmulator implements Runnable, Driver {
 
                     }
                 }
-//                    for(String debugmessage: message){
-//                      System.out.println(debugmessage);
-//                    }
+
             }
         } catch (Exception E) {
             System.err.println(E);
