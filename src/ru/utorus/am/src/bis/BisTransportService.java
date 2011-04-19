@@ -1,7 +1,6 @@
 package ru.utorus.am.src.bis;
 
 import ru.utorus.am.src.general.Observer;
-import ru.utorus.am.src.general.Word;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,9 +15,9 @@ public class BisTransportService implements Observer {
     private String configure = "1";
     private String deConfigure = "2";
     private PerformerKOM performer;
-    private Master master;
+    private MasterKOM master;
 
-    BisTransportService(BDriver driver, Master master, PerformerKOM performer) {
+    BisTransportService(BDriver driver, MasterKOM master, PerformerKOM performer) {
         this.driver = driver;
         this.master = master;
         this.performer = performer;

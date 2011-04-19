@@ -1,8 +1,7 @@
 package ru.utorus.am.src.timemanagement;
 
-import ru.utorus.am.src.bis.Dispatcher;
+import ru.utorus.am.src.bis.DispatcherKOM;
 import ru.utorus.am.src.general.TimerUser;
-import ru.utorus.am.src.general.Word;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,10 +13,10 @@ import ru.utorus.am.src.general.Word;
 public class Synchronizer extends TimerUser {
 
     private Clock clock;
-    private Dispatcher dispatcher;
+    private DispatcherKOM dispatcher;
     private final int SYNCHRONIZER_GUID = 2028;
 
-    public Synchronizer(Dispatcher dispatcher) {
+    public Synchronizer(DispatcherKOM dispatcher) {
         this.dispatcher = dispatcher;
         clock = new Clock();
         Timer timer = new Timer(10);

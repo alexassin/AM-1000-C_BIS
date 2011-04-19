@@ -2,7 +2,6 @@ package ru.utorus.am.src.bis;
 
 import ru.utorus.am.src.general.Driver;
 import ru.utorus.am.src.general.Subscriber;
-import ru.utorus.am.src.general.Word;
 
 /**
  * Created by IntelliJ IDEA.

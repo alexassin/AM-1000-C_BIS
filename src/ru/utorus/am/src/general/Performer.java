@@ -10,8 +10,8 @@ package ru.utorus.am.src.general;
 public interface Performer {
     void deConfigure();
 
-    void configure(Word config);
+    void configure(ConfigurationData config);
 
-    void execute(Word targetMessage);
+    void execute(TargetMessage targetMessage);
 
 }
