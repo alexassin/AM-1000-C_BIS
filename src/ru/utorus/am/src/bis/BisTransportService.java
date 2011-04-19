@@ -2,13 +2,7 @@ package ru.utorus.am.src.bis;
 
 import ru.utorus.am.src.general.Observer;
 
-/**
- * Created by IntelliJ IDEA.
- * User: desktop
- * Date: 28.03.11
- * Time: 14:27
- * To change this template use File | Settings | File Templates.
- */
+
 public class BisTransportService implements Observer {
     private BDriver driver;
     private String serviceMessage = "2026";

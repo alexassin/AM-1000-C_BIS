@@ -2,13 +2,7 @@ package ru.utorus.am.src.general;
 
 import java.util.TimerTask;
 
-/**
- * Created by IntelliJ IDEA.
- * User: desktop
- * Date: 29.03.11
- * Time: 9:41
- * To change this template use File | Settings | File Templates.
- */
+
 public abstract class TimerUser {
     protected class Timer extends Thread {
         int interval;
@@ -30,7 +24,6 @@ public abstract class TimerUser {
                 }
             };
             timer.schedule(heartbeatTask, interval, interval);
-
         }
 
         public void stopTimer() {

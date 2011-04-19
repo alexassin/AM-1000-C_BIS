@@ -3,18 +3,11 @@ package ru.utorus.am.src.as;
 import ru.utorus.am.src.general.*;
 import ru.utorus.am.src.general.Character;
 
-/**
- * Created by IntelliJ IDEA.
- * User: desktop
- * Date: 11.04.11
- * Time: 11:44
- * To change this template use File | Settings | File Templates.
- */
 public class PerformerAS implements Performer{
 
     private TargetTask targetTask = null;
 	private Master master;
-	private Dispatcher dispatcher;
+	private DispatcherAS dispatcher;
 	private State state;
 	private TypeAS type;
 
@@ -36,7 +29,7 @@ public class PerformerAS implements Performer{
 		targetTask.processTS(targetMessage);
 	}
 
-	public void setDispathcer(Dispatcher dispatcher) {
+	public void setDispathcer(DispatcherAS dispatcher) {
 		this.dispatcher = dispatcher;
 	}
 
