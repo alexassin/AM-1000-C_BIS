@@ -5,8 +5,6 @@ import ru.utorus.am.src.general.Observer;
 import ru.utorus.am.src.general.Performer;
 import ru.utorus.am.src.general.TargetMessage;
 
-
-import java.lang.annotation.Target;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
