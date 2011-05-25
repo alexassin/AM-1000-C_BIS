@@ -2,7 +2,6 @@ package ru.utorus.am.src.timemanagement;
 
 import ru.utorus.am.src.bis.DispatcherKOM;
 import ru.utorus.am.src.general.TimerUser;
-import ru.utorus.am.src.general.Word;
 
 
 public class Synchronizer extends TimerUser {

@@ -49,16 +49,20 @@ public class PerformerAS implements Performer{
        }
     }
 
-    public void configure(ConfigurationData configurationData) {
+    public void configure(Word configurationData) {
 		this.state = State.configured;
 		targetTask = new TargetTask(configurationData);
 	}
 
-	class TargetTask {
+    public void execute(Word targetMessage) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    class TargetTask {
 
 		private boolean work;
 
-		public TargetTask(ConfigurationData configurationData) {
+		public TargetTask(Word configurationData) {
 			this.work = true;
 		}
 
