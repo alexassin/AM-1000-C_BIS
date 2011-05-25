@@ -1,9 +1,11 @@
-package ru.utorus.am.src.bis;
+package ru.utorus.am.src.kom;
 
+import ru.utorus.am.src.general.Dispatcher;
 import ru.utorus.am.src.general.Driver;
+import ru.utorus.am.src.general.Word;
 
 
-public class DispatcherKOM implements ru.utorus.am.src.general.Dispatcher {
+public class DispatcherKOM implements Dispatcher {
     private final Driver driver;
     private int nodeId;
 
