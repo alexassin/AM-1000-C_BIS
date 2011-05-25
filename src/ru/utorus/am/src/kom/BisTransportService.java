@@ -1,4 +1,4 @@
-package ru.utorus.am.src.bis;
+package ru.utorus.am.src.kom;
 
 import ru.utorus.am.src.general.Observer;
 import ru.utorus.am.src.general.Word;
