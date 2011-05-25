@@ -6,6 +6,6 @@ public interface Performer {
 
     void configure(Word config);
 
-    void execute(Word targetMessage);
+    void execute(TargetMessage targetMessage);
 
 }

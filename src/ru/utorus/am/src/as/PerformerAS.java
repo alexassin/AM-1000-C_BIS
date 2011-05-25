@@ -54,10 +54,6 @@ public class PerformerAS implements Performer{
 		targetTask = new TargetTask(configurationData);
 	}
 
-    public void execute(Word targetMessage) {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
-
     class TargetTask {
 
 		private boolean work;
