@@ -1,6 +1,7 @@
 package ru.utorus.am.src.bis;
 
 import ru.utorus.am.src.general.Driver;
+import ru.utorus.am.src.general.Word;
 
 
 public class DispatcherKOM implements ru.utorus.am.src.general.Dispatcher {

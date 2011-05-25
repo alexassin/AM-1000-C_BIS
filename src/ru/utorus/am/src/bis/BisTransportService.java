@@ -1,6 +1,7 @@
 package ru.utorus.am.src.bis;
 
 import ru.utorus.am.src.general.Observer;
+import ru.utorus.am.src.general.Word;
 
 
 public class BisTransportService implements Observer {
