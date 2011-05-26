@@ -67,7 +67,7 @@ public class PerformerKOM implements Performer {
     }
 
     public class TargetSubsystem implements Performer {
-        TargetTask targetTask;
+        private TargetTask targetTask;
 
         public void deConfigure() {
             targetTask = null;
@@ -93,7 +93,8 @@ public class PerformerKOM implements Performer {
         private MasterAS masterAS[] = new MasterAS[numberMasterAS];
 
         public void deConfigure() {
-
+            for (int ii = 0; ii < numberMasterAS; ii++)
+                masterAS[ii].deConfigure();
         }
 
         public void configure(Word config) {
@@ -107,6 +108,16 @@ public class PerformerKOM implements Performer {
             private AgentAS agentAS;
             private StateMasterAS state = StateMasterAS.inspection;
 
+            public void deConfigure() {
+                state = StateMasterAS.inspection;
+                agentAS.deConfigure();
+            }
+
+            public void configure(Word config) {
+                state = StateMasterAS.work;
+                agentAS.configure(config);
+            }
+
             protected void send(Word wrd) {
 
             }
@@ -114,7 +125,11 @@ public class PerformerKOM implements Performer {
             public class AgentAS {
                 Dispatcher dispatcher;
 
-                protected void send(Word wrd) {
+                public void deConfigure() {
+
+                }
+
+                public void configure(Word config) {
 
                 }
             }
@@ -175,12 +190,12 @@ public class PerformerKOM implements Performer {
         }
 
         public boolean isConfiguration() {
-            //return (!this.config);
-            if (this.config.equals(null)) {
+            return (!(this.config == null));
+/*            if (this.config.equals(null)) {
                 return false;
             } else {
                 return true;
-            }
+            }*/
         }
     }
 }
