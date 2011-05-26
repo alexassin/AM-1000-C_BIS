@@ -1,7 +1,13 @@
 package ru.utorus.am.src.kom;
 
 
-import ru.utorus.am.src.general.*;
+import ru.utorus.am.src.general.TypeS;
+import ru.utorus.am.src.general.State;
+import ru.utorus.am.src.general.Master;
+import ru.utorus.am.src.general.Dispatcher;
+import ru.utorus.am.src.general.Performer;
+import ru.utorus.am.src.general.Pulser;
+import ru.utorus.am.src.other.Word;
 
 
 public class PerformerKOM implements Performer {
@@ -169,6 +175,7 @@ public class PerformerKOM implements Performer {
         }
 
         public boolean isConfiguration() {
+            //return (!this.config);
             if (this.config.equals(null)) {
                 return false;
             } else {

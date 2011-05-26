@@ -1,5 +1,6 @@
 package ru.utorus.am.src.general;
 
+import ru.utorus.am.src.other.Word;
 
 public abstract class Pulser {
     protected HeartBeat heartBeat;
