@@ -81,6 +81,7 @@ public class PerformerKOM implements Performer {
                 System.out.println(targetMessage);
             }
         }
+
     }
 
     public class BisNetwork implements Performer {
