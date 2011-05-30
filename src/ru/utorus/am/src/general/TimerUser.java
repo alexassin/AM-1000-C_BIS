@@ -16,7 +16,6 @@ public abstract class TimerUser {
         public void startTimer() {
             timer = new java.util.Timer();
             heartbeatTask = new TimerTask() {
-
                 @Override
                 public void run() {
                     execute();

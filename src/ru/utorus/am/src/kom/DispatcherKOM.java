@@ -1,8 +1,6 @@
 package ru.utorus.am.src.kom;
 
-import ru.utorus.am.src.general.Dispatcher;
-import ru.utorus.am.src.general.Driver;
-import ru.utorus.am.src.general.Word;
+import ru.utorus.am.src.general.*;
 
 
 public class DispatcherKOM implements Dispatcher {
@@ -26,5 +24,29 @@ public class DispatcherKOM implements Dispatcher {
 
     public void sendTargetSignal(final Word targetSignal) {
         driver.send(targetSignal);
+    }
+
+    class LOKTransportService implements Observer {
+        class DriverLOK extends Subscriber {
+            public void send(Word wrd) {
+                System.out.println(wrd);
+            }
+
+            public Word receive() {
+                return new Word();
+            }
+        }
+
+        public void update() {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        public void execute(Word wrd) {
+            System.out.println(wrd);
+        }
+
+        public void deActivate() {
+
+        }
     }
 }

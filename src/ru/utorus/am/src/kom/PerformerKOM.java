@@ -55,7 +55,7 @@ public class PerformerKOM implements Performer {
         controllerConfiguration.configure(config);
     }
 
-    public void execute(Word targetMessage) {
+    public void execute(TargetMessage targetMessage) {
         targetSubsystem.execute(targetMessage);
         subNetwork.execute(targetMessage);
     }
@@ -71,30 +71,28 @@ public class PerformerKOM implements Performer {
             targetTask = new TargetTask();
         }
 
-        public void execute(Word targetMessage) {
+        public void execute(TargetMessage targetMessage) {
             targetTask.execute(targetMessage);
         }
 
         public class TargetTask {
-            public void execute(Word targetMessage) {
+            public void execute(TargetMessage targetMessage) {
                 System.out.println(targetMessage);
             }
         }
     }
 
     public class BisNetwork implements Performer {
-        private final int numberMasterAS = 20;
+        private static final int numberMasterAS = 20;
         private MasterAS masterAS[] = new MasterAS[numberMasterAS];
 
         public void deConfigure() {
-
         }
 
         public void configure(Word config) {
-
         }
 
-        public void execute(Word targetMessage) {
+        public void execute(TargetMessage targetMessage) {
         }
 
         public class MasterAS extends Pulser {
@@ -136,7 +134,7 @@ public class PerformerKOM implements Performer {
 
         }
 
-        public void execute(Word targetMessage) {
+        public void execute(TargetMessage targetMessage) {
         }
     }
 
@@ -148,7 +146,7 @@ public class PerformerKOM implements Performer {
         public void configure(Word config) {
         }
 
-        public void execute(Word targetMessage) {
+        public void execute(TargetMessage targetMessage) {
         }
     }
 
@@ -169,11 +167,7 @@ public class PerformerKOM implements Performer {
         }
 
         public boolean isConfiguration() {
-            if (this.config.equals(null)) {
-                return false;
-            } else {
-                return true;
-            }
+            return (!(config == null));
         }
     }
 }
