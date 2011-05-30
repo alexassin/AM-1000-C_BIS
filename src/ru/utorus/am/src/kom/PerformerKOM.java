@@ -98,6 +98,8 @@ public class PerformerKOM implements Performer {
         }
 
         public void configure(Word config) {
+            for (int ii = 0; ii < numberMasterAS; ii++)
+                masterAS[ii].configure(config);
         }
 
         public void execute(Word targetMessage) {
@@ -122,6 +124,7 @@ public class PerformerKOM implements Performer {
             }
 
             public class AgentAS {
+                int numberSubordinate;
                 Dispatcher dispatcher;
 
                 public void deConfigure() {
@@ -130,6 +133,12 @@ public class PerformerKOM implements Performer {
 
                 public void configure(Word config) {
 
+                }
+
+                private enum State {
+                    configured,
+                    deconfigured,
+                    initialization
                 }
             }
         }
@@ -181,7 +190,7 @@ public class PerformerKOM implements Performer {
         }
 
         public void configure(Word mConfig) {
-            this.config = mConfig;
+            config = mConfig;
         }
 
         public Word configuration() {
