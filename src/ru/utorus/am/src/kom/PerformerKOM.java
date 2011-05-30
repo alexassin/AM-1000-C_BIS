@@ -98,7 +98,6 @@ public class PerformerKOM implements Performer {
         }
 
         public void configure(Word config) {
-
         }
 
         public void execute(Word targetMessage) {
@@ -190,12 +189,7 @@ public class PerformerKOM implements Performer {
         }
 
         public boolean isConfiguration() {
-            return (!(this.config == null));
-/*            if (this.config.equals(null)) {
-                return false;
-            } else {
-                return true;
-            }*/
+            return (!(config == null));
         }
     }
 }
